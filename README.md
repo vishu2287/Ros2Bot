@@ -2,7 +2,11 @@
 
 Ros2Bot is a personnel Robot Kit based on open source platform for Developing Highly capable application like mobile robots through its vision system and mobile base which is empowered by single board compuer.
 
+Navigation
+roslaunch turtlebot_bringup minimal.launch
+roslaunch turtlebot_navigation gmapping_kinect2.launch
 
+#SBC (Jetson setup)
 OS Installation 
 
 1. flash the os from this link and use downloaded files- follow the instructions
@@ -24,7 +28,7 @@ wget http://developer.download.nvidia.com/embedded/L4T/r21_Release_v3.0/Tegra_Li
 	1. sudo ./flash.sh jetson-tk1 mmcblk0p1
 	2. reboot the jetson board 
 
-Kernal installation steps
+#Kernal installation steps
 1. Download following files
 	1. wget http://www.jarzebski.pl/files/jetsontk1/grinch-21.3.4/zImage
 	2. wget http://www.jarzebski.pl/files/jetsontk1/grinch-21.3.4/jetson-tk1-grinch-21.3.4-modules.tar.bz2
@@ -46,7 +50,7 @@ To install CUDA on Jetson TK1 - L4T System
 
 
 
-Execute the following commands:
+#Execute the following commands:
 
 
 
@@ -55,7 +59,7 @@ Execute the following commands:
         $ sudo apt-get update
 
         $ sudo apt-get install cuda-toolkit-6-5
-Ros Installation
+#Ros Installation
 turn all the servers on in software and updates under ubuntu software tab
 check all under updates tab in software and updates
 1. Follow
@@ -83,7 +87,7 @@ to avoid rviz segfault
 in ~/.bashrc:
 unset GTK_IM_MODULE
 
-Turtlebot installation
+#Turtlebot installation
 1.download from synaptic package manager
 2. install remaining from here packag http://wiki.ros.org/turtlebot/Tutorials/indigo/Turtlebot%20Installation
 or 
@@ -91,8 +95,8 @@ sudo apt-get install ros-indigo-turtlebot ros-indigo-turtlebot-apps ros-indigo-t
 3. change from create to kobuki in minimal.launch
 4. add export in .bashrc "export TURTLEBOT_BASE = kobuki"
 5. rosrun kobuki_ftdi create_dev_rules 
-kinect installation:
-1. add "export TURTLEBOT_3D_SENSOR = kinect" in bashrc
+#kinect2 installation:
+1. add "export TURTLEBOT_3D_SENSOR = kinect2" in bashrc
 
 creating catkin workspace
 change workspace to catkin_Ws/devel/setup.bash in ~/.bashrc
@@ -111,7 +115,7 @@ After reboot  check for kinect2 inputs by typing lsusb
 in downloads/libfreenect2/rules/90-kinect rules, edit according to your kinect2 usb configuration and copy the file to /etc/udev/rules
 copy all the kinect2files which are available in email
 
-rviz robot model
+@rviz robot model
 $ sudo apt-get remove ros-indigo-robot-model
 $ cd ~/catkin_ws/src
 $ git clone https://github.com/ros/robot_model.git
